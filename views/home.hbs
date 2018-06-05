@@ -7,17 +7,19 @@
   <title>Document</title>
 </head>
 <body>
+
  <h1>{{title}}</h1> 
 Welcome to Kiwi land!
-
-<h2>{{artist}}</h2> 
 
 {{#each art}}
 <ul>
   <li>{{title}}</li>
-  <li>{{name}}</li>
-</ul>
+  <li>{{artist/name}}</li>
+  <li>{{license/name}}</li>
+  </ul>
+  <img src="{{artist/url}}">
 {{/each}}
+
 </body>
 </html>
 
