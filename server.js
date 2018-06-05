@@ -17,8 +17,8 @@ server.get('/', (req, res) => {
   const viewData = {
     title: 'Gallery \n',
     art: art,
-    name: 'name',
-    license: 'url'
+    name: art,
+    license: art
 
   }
   res.render('home', viewData)

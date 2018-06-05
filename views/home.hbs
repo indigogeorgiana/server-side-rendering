@@ -8,17 +8,18 @@
 </head>
 <body>
 
- <h1>{{title}}</h1> 
-Welcome to Kiwi land!
+  <h1>{{title}}</h1> 
+  Welcome to Kiwi land!
 
-{{#each art}}
-<ul>
-  <li>{{title}}</li>
-  <li>{{artist/name}}</li>
-  <li>{{license/name}}</li>
-  </ul>
-  <img src="{{artist/url}}">
-{{/each}}
+  {{#each art}}
+    <ul>
+      <li>{{title}}</li>
+      <li>{{artist/name}}</li>
+      <li><a href={{license/url}}>{{license/name}}</a></li>
+    </ul>
+    
+    <img src={{artist/url}}>
+  {{/each}}
 
 </body>
 </html>
