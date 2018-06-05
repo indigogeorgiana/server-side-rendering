@@ -16,12 +16,4 @@ server.use(express.static('public'))
 
 // Routes
 server.get('/', route.homePage)
-
-server.get('/artworks/:id', (req, res) => {
-  const artId = req.params.id
-  function isId (idNumber) {
-    return idNumber.id === Number(artId)
-  }
-  const artW = art.find(isId)
-  res.render('./partials/artworks', artW)
-})
+server.get('/artworks/:id', route.findArt)

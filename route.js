@@ -4,7 +4,8 @@ const art = require('./art.json')
 const server = express()
 
 module.exports = {
-  homePage
+  homePage,
+  findArt
 }
 
 server.engine('hbs', hbs({
@@ -21,4 +22,13 @@ function homePage (req, res) {
     isTitle: true
   }
   res.render('home', viewData)
+}
+
+function findArt (req, res) {
+  const artId = req.params.id
+  function isId (idNumber) {
+    return idNumber.id === Number(artId)
+  }
+  const artW = art.find(isId)
+  res.render('./partials/artworks', artW)
 }
