@@ -1,4 +1,4 @@
-const art = require('./art.json')
+const data = require('./data')
 const express = require('express')
 const router = express.Router()
 
@@ -6,7 +6,7 @@ const router = express.Router()
 router.get('/', (req, res) => {
   const viewData = {
     title: 'Gallery',
-    art: art,
+    art: data.getAll(),
     copyright: 'This is copyright'
   }
   res.render('home', viewData)
@@ -14,10 +14,16 @@ router.get('/', (req, res) => {
 
 router.get('/artworks/:id', (req, res) => {
   const id = req.params.id
+  var artwork = data.getById(id)
+  res.render('artworks', artwork)
+})
+
+/*router.get('/artworks/:id', (req, res) => {
+  const id = req.params.id
   var artwork = art.find(function (element) {
     return element.id === parseInt(id)
   })
   res.render('artworks', artwork)
-})
+}) */
 
 module.exports = router
