@@ -7,8 +7,10 @@ module.exports = server
 
 // Middleware
 server.engine('hbs', hbs({
-  extname: 'hbs'
+  extname: 'hbs',
+  defaultLayout: 'main'
 }))
+
 server.set('view engine', 'hbs')
 server.use(express.static('public'))
 
@@ -23,4 +25,12 @@ server.get('/', (req, res) => {
     art: art
   }
   res.render('home', viewData)
+})
+
+server.get('/artworks/:id', (req, res) => {
+  const id = req.params.id
+  const artistInfo = art.find(function (element) {
+    return element.id === Number(id)
+  })
+  res.render('artwork-page', artistInfo)
 })
