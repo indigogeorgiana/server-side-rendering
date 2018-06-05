@@ -3,7 +3,9 @@ const hbs = require('express-handlebars')
 const routes = require('./routes')
 
 const server = express()
-server.use('/routes', routes)
+// The / in server.use determines the home directory
+// If you replace it with /route, then your home directory is localhost:3000/routes/
+server.use('/', routes)
 module.exports = server
 
 // Middleware
