@@ -7,6 +7,7 @@ module.exports = server
 
 // Middleware
 server.engine('hbs', hbs({
+  defaultLayout: 'main',
   extname: 'hbs'
 }))
 server.set('view engine', 'hbs')
