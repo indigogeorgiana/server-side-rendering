@@ -7,7 +7,10 @@
   <title>Document</title>
 </head>
 <body>
+  <p>by {{artist.name}}</p>
   <img src="{{artwork}}"/>
-  <p>{{artwork.title}}</p>
+  <p>Licence: {{license.name}}</p>
+
+  {{>homepage-link}}
 </body>
 </html>

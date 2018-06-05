@@ -7,7 +7,8 @@ module.exports = server
 
 // Middleware
 server.engine('hbs', hbs({
-  extname: 'hbs'
+  extname: 'hbs',
+  defaultLayout: 'main'
 }))
 server.set('view engine', 'hbs')
 server.use(express.static('public'))
