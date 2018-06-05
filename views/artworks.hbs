@@ -9,7 +9,9 @@
 <body>
   <p>by {{artist.name}}</p>
   <img src="{{artwork}}"/>
-  <p>Licence: {{license.name}}</p>
+
+  <p>Licence: {{license.name}}: {{license.url}} </p>
+ {{>comments}}
 
   {{>homepage-link}}
 </body>
